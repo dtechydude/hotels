@@ -71,12 +71,25 @@
                                     <div class="col-lg-5">
                                         <div class="room-thumb">
                                             <div class="room-active-two">
+                                                {% if room_category == 'CLASSIC-NEST' %}
                                                 <img src="{% static 'hotel/assets/img/room/classic_nest1.jpg' %}" alt="">
                                                 <img src="{% static 'hotel/assets/img/room/classic_nest2.jpg' %}" alt="">
-                                                <img src="{% static 'hotel/assets/img/room/classic_nest3.jpg' %}" alt="">
-                                               
+                                                
+                                                {% elif room_category == 'SUPER-NEST' %}
+                                                <img src="{% static 'hotel/assets/img/room/super_nest1.jpg' %}" alt="">
+                                                <img src="{% static 'hotel/assets/img/room/super_nest2.jpg' %}" alt="">
+
+                                                {% elif room_category == 'EXECUTIVE-NEST' %}
+                                                <img src="{% static 'hotel/assets/img/room/executive_nest2.jpg' %}" alt="">
+
+                                                {% elif room_category == 'TWIN-NEST' %}
+                                                <img src="{% static 'hotel/assets/img/room/twin_nest2.jpg' %}" alt="">
+                                                {% else %}
+                                                <img src="{% static 'hotel/assets/img/room/royal_nest1.jpg' %}" alt="">
+                                                <img src="{% static 'hotel/assets/img/room/royal_nest2.jpg' %}" alt="">
+                                                {% endif %}
                                             </div>
-                                            <a href="#" class="room-gallery"><i class="flaticon-picture"></i>4</a>
+                                            <a href="#" class="room-gallery"><i class="flaticon-picture"></i>2</a>
                                         </div>
                                     </div>
                                     <div class="col-lg-7">

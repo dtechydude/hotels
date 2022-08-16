@@ -22,7 +22,18 @@
 {% block breadcrumb %} 
 
  <!-- breadcrumb-area -->
- <section class="breadcrumb-area breadcrumb-bg" style="background-image:url('{% static 'hotel/assets/img/bg/breadcrumb_bg_room.jpg' %}')">
+ {% if room_category == 'CLASSIC-NEST' %}
+ <section class="breadcrumb-area breadcrumb-bg" style="background-image:url('{% static 'hotel/assets/img/bg/breadcrumb_bg_classicnest.jpg' %}')">
+    {% elif room_category == 'SUPER-NEST'  %}
+    <section class="breadcrumb-area breadcrumb-bg" style="background-image:url('{% static 'hotel/assets/img/bg/breadcrumb_bg_supernest.jpg' %}')">
+        {% elif room_category == 'EXECUTIVE-NEST'  %}
+    <section class="breadcrumb-area breadcrumb-bg" style="background-image:url('{% static 'hotel/assets/img/bg/breadcrumb_bg_executivenest.jpg' %}')">
+        {% elif room_category == 'TWIN-NEST'  %}
+    <section class="breadcrumb-area breadcrumb-bg" style="background-image:url('{% static 'hotel/assets/img/bg/breadcrumb_bg_twinnest.jpg' %}')">
+        {% else %}
+    <section class="breadcrumb-area breadcrumb-bg" style="background-image:url('{% static 'hotel/assets/img/bg/breadcrumb_bg_royalnest.jpg' %}')">
+
+    {% endif %}
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-8">
@@ -462,7 +473,7 @@
                                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                                             <div class="guest-item">
                                                 <div class="guest-thumb">
-                                                    <a href="#"><img src="{% static 'hotel/assets/img/images/guest_img01.jpg' %}" alt="img"></a>
+                                                    <a href="{% url 'hotel:RoomListView' %}"><img src="{% static 'hotel/assets/img/images/guest_img01.jpg' %}" alt="img"></a>
                                                 </div>
                                                 <div class="guest-content">
                                                     <div class="rating">
@@ -474,18 +485,18 @@
                                                     </div>
                                                     <ul>
                                                         <li>
-                                                            <h2 class="title black-title"><a href="room-details.html">Royal Nest</a></h2>
+                                                            <h2 class="title black-title"><a href="{% url 'hotel:RoomListView' %}">Royal Nest</a></h2>
                                                         </li>
                                                         <li><a href="#" class="price">-</a></li>
                                                     </ul>
-                                                    <a href="#" class="book-now-btn">book now</a>
+                                                    <a href="{% url 'hotel:RoomListView' %}" class="book-now-btn">book now</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                                             <div class="guest-item">
                                                 <div class="guest-thumb">
-                                                    <a href="#"><img src="{% static 'hotel/assets/img/images/guest_img02.jpg' %}" alt="img"></a>
+                                                    <a href="{% url 'hotel:RoomListView' %}"><img src="{% static 'hotel/assets/img/images/our_supernest.jpg' %}" alt="img"></a>
                                                 </div>
                                                 <div class="guest-content">
                                                     <div class="rating">
@@ -497,18 +508,18 @@
                                                     </div>
                                                     <ul>
                                                         <li>
-                                                            <h2 class="title black-title"><a href="room-details.html">Twin Nest</a></h2>
+                                                            <h2 class="title black-title"><a href="{% url 'hotel:RoomListView' %}">Super Nest</a></h2>
                                                         </li>
                                                         <li><a href="#" class="price">-</a></li>
                                                     </ul>
-                                                    <a href="#" class="book-now-btn">book now</a>
+                                                    <a href="{% url 'hotel:RoomListView' %}" class="book-now-btn">book now</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                                             <div class="guest-item">
                                                 <div class="guest-thumb">
-                                                    <a href="#"><img src="{% static 'hotel/assets/img/images/guest_img03.jpg' %}" alt="img"></a>
+                                                    <a href="{% url 'hotel:services' %}"><img src="{% static 'hotel/assets/img/images/our_dining.jpg' %}" alt="dinning"></a>
                                                 </div>
                                                 <div class="guest-content">
                                                     <div class="rating">
@@ -520,18 +531,18 @@
                                                     </div>
                                                     <ul>
                                                         <li>
-                                                            <h2 class="title black-title"><a href="room-details.html">Our Dining</a></h2>
+                                                            <h2 class="title black-title"><a href="{% url 'hotel:services' %}">Our Dining</a></h2>
                                                         </li>
                                                         <li><a href="#" class="price">-</a></li>
                                                     </ul>
-                                                    <a href="#" class="book-now-btn">book now</a>
+                                                    <a href="{% url 'hotel:services' %}" class="book-now-btn">Check it</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                                             <div class="guest-item">
                                                 <div class="guest-thumb">
-                                                    <a href="#"><img src="{% static 'hotel/assets/img/images/guest_img04.jpg' %}" alt="img"></a>
+                                                    <a href="#"><img src="{% static 'hotel/assets/img/images/our_classicnest.jpg' %}" alt="img"></a>
                                                 </div>
                                                 <div class="guest-content">
                                                     <div class="rating">
@@ -543,11 +554,11 @@
                                                     </div>
                                                     <ul>
                                                         <li>
-                                                            <h2 class="title black-title"><a href="#">Classic Nest</a></h2>
+                                                            <h2 class="title black-title"><a href="{% url 'hotel:RoomListView' %}">Classic Nest</a></h2>
                                                         </li>
                                                         <li><a href="#" class="price">-</a></li>
                                                     </ul>
-                                                    <a href="#" class="book-now-btn">book now</a>
+                                                    <a href="{% url 'hotel:RoomListView' %}" class="book-now-btn">book now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -558,7 +569,7 @@
                                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                                             <div class="guest-item">
                                                 <div class="guest-thumb">
-                                                    <a href="#"><img src="{% static 'hotel/assets/img/images/guest_img02.jpg' %}" alt="img"></a>
+                                                    <a href="{% url 'hotel:RoomListView' %}"><img src="{% static 'hotel/assets/img/images/our_twinnest.jpg' %}" alt="twin"></a>
                                                 </div>
                                                 <div class="guest-content">
                                                     <div class="rating">
@@ -570,18 +581,18 @@
                                                     </div>
                                                     <ul>
                                                         <li>
-                                                            <h2 class="title black-title"><a href="#">Twin Nest</a></h2>
+                                                            <h2 class="title black-title"><a href="{% url 'hotel:RoomListView' %}">Twin Nest</a></h2>
                                                         </li>
                                                         <li><a href="#" class="price">-</a></li>
                                                     </ul>
-                                                    <a href="#" class="book-now-btn">book now</a>
+                                                    <a href="{% url 'hotel:RoomListView' %}" class="book-now-btn">book now</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                                             <div class="guest-item">
                                                 <div class="guest-thumb">
-                                                    <a href="#"><img src="{% static 'hotel/assets/img/images/guest_img04.jpg' %}" alt="img"></a>
+                                                    <a href="{% url 'hotel:RoomListView' %}"><img src="{% static 'hotel/assets/img/images/our_executivenest.jpg' %}" alt="executive"></a>
                                                 </div>
                                                 <div class="guest-content">
                                                     <div class="rating">
@@ -593,18 +604,18 @@
                                                     </div>
                                                     <ul>
                                                         <li>
-                                                            <h2 class="title black-title"><a href="#">Executive Nest</a></h2>
+                                                            <h2 class="title black-title"><a href="{% url 'hotel:RoomListView' %}">Executive Nest</a></h2>
                                                         </li>
-                                                        <li><a href="#" class="price">200$ / NIGHT</a></li>
+                                                        <li><a href="#" class="price">-</a></li>
                                                     </ul>
-                                                    <a href="#" class="book-now-btn">book now</a>
+                                                    <a href="{% url 'hotel:RoomListView' %}" class="book-now-btn">book now</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                                             <div class="guest-item">
                                                 <div class="guest-thumb">
-                                                    <a href="#"><img src="{% static 'hotel/assets/img/images/guest_img03.jpg' %}" alt="img"></a>
+                                                    <a href="#"><img src="{% static 'hotel/assets/img/images/our_somethingnice.jpg' %}" alt="img"></a>
                                                 </div>
                                                 <div class="guest-content">
                                                     <div class="rating">
@@ -616,18 +627,18 @@
                                                     </div>
                                                     <ul>
                                                         <li>
-                                                            <h2 class="title black-title"><a href="room-details.html">Our Dining</a></h2>
+                                                            <h2 class="title black-title"><a href="{% url 'hotel:services'%}">Something Nice</a></h2>
                                                         </li>
-                                                        <li><a href="#" class="price">29$ / NIGHT</a></li>
+                                                        <li><a href="#" class="price">-</a></li>
                                                     </ul>
-                                                    <a href="#" class="book-now-btn">book now</a>
+                                                    <a href="{% url 'hotel:services'%}" class="book-now-btn">Explore</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
                                             <div class="guest-item">
                                                 <div class="guest-thumb">
-                                                    <a href="#"><img src="{% static 'hotel/assets/img/images/guest_img01.jpg' %}" alt="img"></a>
+                                                    <a href="#"><img src="{% static 'hotel/assets/img/images/our_paulazio.jpg' %}" alt="paulazio"></a>
                                                 </div>
                                                 <div class="guest-content">
                                                     <div class="rating">
@@ -643,7 +654,7 @@
                                                         </li>
                                                         <li><a href="#" class="price">-</a></li>
                                                     </ul>
-                                                    <a href="#" class="book-now-btn">book now</a>
+                                                    <a href="{% url 'hotel:services' %}" class="book-now-btn">Explore</a>
                                                 </div>
                                             </div>
                                         </div>

@@ -32,7 +32,7 @@ def contact(request):
             message_name, # name
             message,
             message_email, # email
-            ['dtechydude@gmail.com'], # to email
+            ['info@vintagenesthotels.com'], # to email
             )
         
         return render(request, 'hotel/contact.html', {'message_name': message_name})
