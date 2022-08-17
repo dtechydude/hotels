@@ -4,6 +4,7 @@ from .models import Room, Booking
 from .forms import AvailabilityForm
 from hotel.booking_functions.availability import check_availability
 from django.core.mail import send_mail
+from django.conf import settings
 from django.urls import reverse, reverse_lazy
 
 # Create your views here.
@@ -32,7 +33,7 @@ def contact(request):
             message_name, # name
             message,
             message_email, # email
-            ['info@vintagenesthotels.com'], # to email
+            ['contact@fizcos.com'], # to email
             )
         
         return render(request, 'hotel/contact.html', {'message_name': message_name})
@@ -55,7 +56,7 @@ def book_by_mail(request):
             'Booking', # subject
             booking_detail,    # message
             guest_email, # from email
-            ['bookings@vintagenesthotels.com'], # to email
+            ['contact@fizcos.com'], # to email
             )
         
         return render(request, 'hotel/index.html', {})
