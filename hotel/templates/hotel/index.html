@@ -82,7 +82,13 @@
                                             </li>
                                             <li><a href="{% url 'hotel:contact-us' %}">Contact</a></li>
                                             {% if user.is_authenticated %}
-                                            <li><a href="{% url 'account_logout' %}">Logout</a></li>
+                                            <li class="menu-item-has-children"><a href="#">My Account</a>
+                                                <ul class="submenu">
+                                                    <li><a href="{% url 'hotel:BookingListView' %}">My Bookings</a></li>
+                                                    <li><a href="{% url 'account_logout' %}">Logout</a></li>
+                                                </ul>
+                                            </li>
+                                            
                                             {% else %}
                                             <li><a href="{% url 'account_login' %}">Login</a></li>
                                             {% endif %}
@@ -110,11 +116,10 @@
                                     </div>
                                     <div class="social-links">
                                         <ul class="clearfix">
-                                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                            <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
-                                            <li><a href="#"><span class="fab fa-instagram"></span></a></li>
-                                            <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                                            <li><a href="https://www.instagram.com/vintagenestng/"><i class="fa-brands fa-instagram"></i></a></li>
+                                            <li><a href="https://www.twitter.com/vintagenestng/"><i class="fa-brands fa-twitter"></i></a></li>
+                                            <li><a href="https://www.facebook.com/vintagenestng/"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                            <li><a href="https://wa.me/+2348099888863?text=I'm%20inquiring%20about%20the%20hotel%20bookings"><i class="fa-brands fa-whatsapp"></i></a></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -157,7 +162,7 @@
             <!-- slider-area -->
             <section class="slider-area slider-style-two">
                 <div class="slider-active">
-                    <div class="single-slider slider-bg" data-background="{% static 'hotel/assets/img/slider/slider_img02.jpg' %}">
+                    <div class="single-slider slider-bg" data-background="{% static 'hotel/assets/img/slider/slider_img06.jpg' %}">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -187,6 +192,23 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="single-slider slider-bg" data-background="{% static 'hotel/assets/img/slider/slider_img04.jpg' %}">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="slider-content text-center">
+                                        <div class="rating-img" data-animation="fadeInUp" data-delay=".2s">
+                                            <img src="{% static 'hotel/assets/img/icon/rating.png' %}" alt="">
+                                        </div>
+                                        <h2 class="title" data-animation="fadeInUp" data-delay=".6s">Collaborate & Celebrate</h2>
+                                        <a href="{% url 'hotel:services' %}" class="btn" data-animation="fadeInUp" data-delay=".8s">room & services</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
             <!-- slider-area-end -->
@@ -348,36 +370,36 @@
                                 <div class="star-superior-item text-center">
                                     <span class="line"></span>
                                     <span class="line-two"></span>
-                                    <h3 class="title"><a href="{% url 'hotel:RoomListView' %}">Our <span>Rooms</span></a></h3>
-                                    <p>stay in style</p>
-                                    <a href="{% url 'hotel:RoomListView' %}">discover</a>
+                                    <h3 class="title" style="color:black;"><a href="{% url 'hotel:RoomListView' %}">Our <span>Rooms</span></a></h3>
+                                    <p style="color:black;">stay in style</p>
+                                    <a style="color:black;" href="{% url 'hotel:RoomListView' %}">discover</a>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 col-sm-6">
                                 <div class="star-superior-item active text-center">
                                     <span class="line"></span>
                                     <span class="line-two"></span>
-                                    <h3 class="title"><a href="{% url 'hotel:about' %}">Relax <span>Recreation</span></a></h3>
-                                    <p>Paulazzio Lounge</p>
-                                    <a href="{% url 'hotel:RoomListView' %}">discover</a>
+                                    <h3 class="title" style="color:black;"><a href="{% url 'hotel:about' %}">Relax <span>Recreation</span></a></h3>
+                                    <p style="color:black;">Paulazzio Lounge</p>
+                                    <a style="color:black;" href="{% url 'hotel:RoomListView' %}">discover</a>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 col-sm-6">
                                 <div class="star-superior-item text-center">
                                     <span class="line"></span>
                                     <span class="line-two"></span>
-                                    <h3 class="title"><a href="{% url 'hotel:services' %}">Something <span>Nice</span></a></h3>
-                                    <p>restaurants & bar</p>
-                                    <a href="{% url 'hotel:services' %}">discover</a>
+                                    <h3 class="title" style="color:black;"><a href="{% url 'hotel:services' %}">Something <span>Nice</span></a></h3>
+                                    <p style="color:black;">restaurants & bar</p>
+                                    <a style="color:black;" href="{% url 'hotel:services' %}">discover</a>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 col-sm-6">
                                 <div class="star-superior-item text-center">
                                     <span class="line"></span>
                                     <span class="line-two"></span>
-                                    <h3 class="title"><a href="{% url 'hotel:services' %}">Vintage <span>Bakery</span></a></h3>
-                                    <p>Freshly baked daily</p>
-                                    <a href="{% url 'hotel:services' %}">discover</a>
+                                    <h3 class="title" style="color:black;"><a href="{% url 'hotel:services' %}">Vintage <span>Bakery</span></a></h3>
+                                    <p style="color:black;">Freshly baked daily</p>
+                                    <a style="color:black;" href="{% url 'hotel:services' %}">discover</a>
                                 </div>
                             </div>
                         </div>
@@ -402,7 +424,7 @@
                         <div class="col-lg-4 col-md-8 col-sm-10">
                             <div class="author-profile mb-30">
                                 <div class="author-thumb mb-35">
-                                    <img src="{% static 'hotel/assets/img/blog/author_img.png' %}" alt="img">
+                                    <img src="{% static 'hotel/assets/img/blog/author_img_rest.png' %}" alt="img">
                                 </div>
                                 <div class="author-content mb-30">
                                     <a href="#" class="tag">Special DINING</a>
@@ -498,7 +520,7 @@
                         </div>
                         <div class="col-xl-6 col-lg-5 col-md-3">
                             <div class="spa-img">
-                                <img src="{% static 'hotel/assets/img/images/spa_img.jpg' %}" alt="">
+                                <img src="{% static 'hotel/assets/img/images/spa_img01.jpg' %}" alt="">
                             </div>
                         </div>
                     </div>

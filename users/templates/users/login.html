@@ -37,9 +37,11 @@
 									<div class="text-center mb-3">
 										<a href="{% url 'hotel:home' %}"><img src="{% static 'dashboard/images/logo-full.png' %}" alt=""></a>
 									</div>
-
+                                    {% if request.get_full_path == "/accounts/login/"  %}
                                     <h4 class="text-center mb-4"><a href="/accounts/login/">Account Login</a> </h4>
+                                   {% endif %}
                                     {% block content_form %}
+                                    
                                     <form action="" method="post">
                                         {% csrf_token %}
                                         <div class="mb-3">

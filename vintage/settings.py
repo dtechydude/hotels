@@ -155,6 +155,9 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = 'hotel:home' # Redirect the allauth login
 
+# Olu-added to change the time format, removing the time
+DATE_INPUT_FORMATS = ['%m-%d-%Y']
+
 
 
 # Static files (CSS, JavaScript, Images)

@@ -14,16 +14,18 @@
                   <li class="nav-item">
                      <a class="nav-link active" data-bs-toggle="tab" href="#AllRooms">All Rooms</a>
                   </li>
+                  {% if user.is_superuser %}
                   <li class="nav-item">
                      <a class="nav-link" data-bs-toggle="tab" href="#ActiveEmployee">Active Employee</a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link" data-bs-toggle="tab" href="#InactiveEmployee">Inactive Employee</a>
                   </li>
+                  {% endif %}
                </ul>
             </div>
             <div class="d-flex align-items-center mb-2"> 
-               <a href="{% url 'hotel:home' %}" class="btn btn-secondary">+ Make Payment</a>
+               <a href="{% url 'hotel:payment' %}" class="btn btn-secondary">+ Make Payment</a>
                <div class="newest ms-3">
                   <select class="default-select">
                      <option>Newest</option>
@@ -48,11 +50,11 @@
                                           </div>
                                        </th>
                                        <th>Room Name</th>
-                                       <th>Bed Type</th>
-                                       <th>Room Floor</th>
+                                       <th>Check-In</th>
+                                       <th>Check-Out</th>
                                        <th>Facilities</th>
-                                       <th>Rate</th>
                                        <th>Status</th>
+                                       <th>Action</th>
                                        <th class="bg-none"></th>
                                     </tr>
                                  </thead>
@@ -92,12 +94,16 @@
                                        </td>
                                        <td>
                                           <div class="">
-                                             <span class="mb-2">Price</span>	
-                                             <span class="font-w500">$145<small class="fs-14 ms-2">/night</small></span>
+                                             <span class="mb-2">Status</span>	
+                                             <!-- <span class="font-w500">$145<small class="fs-14 ms-2">/night</small></span> -->
+                                             <span><a href="#"  class="btn btn-success btn-md">BOOKED</a></span>
                                           </div>
                                        </td>
-                                       <td>
+                                       <!-- <td>
                                           <a href="{{ booking.get_cancel_booking_url }}"  class="btn btn-success btn-md">CANCEL</a>
+                                       </td> -->
+                                       <td>
+                                          <a href="{{ booking.get_cancel_booking_url }}"  class="btn btn-danger btn-md">CANCEL</a>
                                        </td>
                                        <td>
                                           <div class="dropdown dropend">
@@ -110,7 +116,7 @@
                                              </a>
                                              <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="javascript:void(0);">Edit</a>
-                                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                                <a class="dropdown-item" href="{{ booking.get_cancel_booking_url }}">Delete</a>
                                              </div>
                                           </div>
                                        </td>

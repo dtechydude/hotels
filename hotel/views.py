@@ -21,47 +21,9 @@ def services(request):
 def blog(request):
     return render(request, 'hotel/blog.html', {})
 
-def contact(request):
-    if request.method == "POST":
-        message_name = request.POST['message-name']
-        message_email = request.POST['message-email']
+def payment(request):
+    return render(request, 'hotel/makepayment.html', {})
 
-        message = request.POST['message']
-
-        # send an email
-        send_mail(
-            message_name, # name
-            message,
-            message_email, # email
-            ['contact@fizcos.com'], # to email
-            )
-        
-        return render(request, 'hotel/contact.html', {'message_name': message_name})
-    else:
-        return render(request, 'hotel/contact.html', {})
-
-
-def book_by_mail(request):
-    if request.method == "POST":
-        check_in = request.POST['check-in']
-        check_out = request.POST['check-out']
-        guest_phone = request.POST['phone']
-        guest_email = request.POST['email']
-        room_select = request.POST['room-select']
-
-
-        booking_detail = "Phone :" + guest_phone +  "Check In Date: " + check_in + "Check Out Date: "  + check_out  + "Room Selected: " +  room_select
-        # send an email
-        send_mail(
-            'Booking', # subject
-            booking_detail,    # message
-            guest_email, # from email
-            ['contact@fizcos.com'], # to email
-            )
-        
-        return render(request, 'hotel/index.html', {})
-    else:
-        return render(request, 'hotel/index.html', {})
 
 
 
@@ -143,8 +105,14 @@ class RoomDetailView(View):
                 check_out=data['check_out']
             )
             booking.save()
-            return HttpResponse (booking)
-
+            # olu -improvised
+            booking = booking
+            context={        
+            'booking': booking,
+            }        
+        
+            return render(request, 'hotel/olubook.html', context)
+           # return HttpResponse (booking)
         elif request.user.is_anonymous:
                      
             # return HttpResponse('You must be logged in first. LOGIN HERE....')     
@@ -188,3 +156,48 @@ class CancelBookingView(DeleteView):
     model = Booking
     template_name = 'hotel/booking_cancel_view.html'
     success_url = reverse_lazy('hotel:BookingListView')
+
+
+
+
+def contact(request):
+    if request.method == "POST":
+        message_name = request.POST['message-name']
+        message_email = request.POST['message-email']
+
+        message = request.POST['message']
+
+        # send an email
+        send_mail(
+            message_name, # name
+            message,
+            message_email, # email
+            ['contact@fizcos.com'], # to email
+            )
+        
+        return render(request, 'hotel/contact.html', {'message_name': message_name})
+    else:
+        return render(request, 'hotel/contact.html', {})
+
+
+def book_by_mail(request):
+    if request.method == "POST":
+        check_in = request.POST['check-in']
+        check_out = request.POST['check-out']
+        guest_phone = request.POST['phone']
+        guest_email = request.POST['email']
+        room_select = request.POST['room-select']
+
+
+        booking_detail = "Phone :" + guest_phone +  "Check In Date: " + check_in + "Check Out Date: "  + check_out  + "Room Selected: " +  room_select
+        # send an email
+        send_mail(
+            'Booking', # subject
+            booking_detail,    # message
+            guest_email, # from email
+            ['contact@fizcos.com'], # to email
+            )
+        
+        return render(request, 'hotel/index.html', {})
+    else:
+        return render(request, 'hotel/index.html', {})

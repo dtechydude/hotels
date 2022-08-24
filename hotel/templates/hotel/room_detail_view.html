@@ -67,10 +67,10 @@
 
              <!-- ROOM CLASSIC NEST-->                   
             {% if room_category == 'CLASSIC-NEST' %}
-                                <img src="{% static 'hotel/assets/img/room/room_det_img01.jpg' %}" alt="">
+                                <img src="{% static 'hotel/assets/img/room/room_det_classic01.jpg' %}" alt="">
                                 <ul>
                                     <li class="more"><a href="#">more <i class="flaticon-right"></i></a></li>
-                                    <li class="expand"><a href="{% static 'hotel/assets/img/room/room_det_img02.jpg' %}" class="popup-image">Expand <i class="flaticon-full-size"></i></a></li>
+                                    <li class="expand"><a href="{% static 'hotel/assets/img/room/room_det_classic02.jpg' %}" class="popup-image">Expand <i class="flaticon-full-size"></i></a></li>
                                     
                                 </ul>
                             </div>
@@ -107,10 +107,10 @@
 
  <!-- ROOM SUPER NEST-->                   
             {% elif room_category == 'SUPER-NEST' %}
-                                <img src="{% static 'hotel/assets/img/room/room_det_img01.jpg' %}" alt="">
+                                <img src="{% static 'hotel/assets/img/room/room_det_super01.jpg' %}" alt="">
                                 <ul>
                                     <li class="more"><a href="#">more <i class="flaticon-right"></i></a></li>
-                                    <li class="expand"><a href="{% static 'hotel/assets/img/room/room_det_img02.jpg' %}" class="popup-image">Expand <i class="flaticon-full-size"></i></a></li>
+                                    <li class="expand"><a href="{% static 'hotel/assets/img/room/room_det_super02.jpg' %}" class="popup-image">Expand <i class="flaticon-full-size"></i></a></li>
                                 </ul>
                             </div>
                             <div class="room-details-content">
@@ -144,10 +144,10 @@
                 
                 <!-- ROOM EXECUTIVE NEST-->                   
                     {% elif room_category == 'EXECUTIVE-NEST' %}
-                            <img src="{% static 'hotel/assets/img/room/room_det_img01.jpg' %}" alt="">
+                            <img src="{% static 'hotel/assets/img/room/room_det_exec01.jpg' %}" alt="">
                             <ul>
                                 <li class="more"><a href="#">more <i class="flaticon-right"></i></a></li>
-                                <li class="expand"><a href="{% static 'hotel/assets/img/room/room_det_img02.jpg' %}" class="popup-image">Expand <i class="flaticon-full-size"></i></a></li>
+                                <li class="expand"><a href="{% static 'hotel/assets/img/room/room_det_exec02.jpg' %}" class="popup-image">Expand <i class="flaticon-full-size"></i></a></li>
                             </ul>
                         </div>
                         <div class="room-details-content">
@@ -182,10 +182,10 @@
 
         <!-- ROOM TWIN NEST-->                   
             {% elif room_category == 'TWIN-NEST' %}
-                    <img src="{% static 'hotel/assets/img/room/room_det_img01.jpg' %}" alt="">
+                    <img src="{% static 'hotel/assets/img/room/room_det_twin01.jpg' %}" alt="">
                     <ul>
                         <li class="more"><a href="#">more <i class="flaticon-right"></i></a></li>
-                        <li class="expand"><a href="{% static 'hotel/assets/img/room/room_det_img02.jpg' %}" class="popup-image">Expand <i class="flaticon-full-size"></i></a></li>
+                        <li class="expand"><a href="{% static 'hotel/assets/img/room/room_det_twin02.jpg' %}" class="popup-image">Expand <i class="flaticon-full-size"></i></a></li>
                     </ul>
                 </div>
                 <div class="room-details-content">
@@ -220,10 +220,10 @@
 
         <!-- ROOM ROYAL NEST-->                   
         {% elif room_category == 'ROYAL-NEST' %}
-                <img src="{% static 'hotel/assets/img/room/room_det_img01.jpg' %}" alt="">
+                <img src="{% static 'hotel/assets/img/room/room_det_royal01.jpg' %}" alt="">
                 <ul>
                     <li class="more"><a href="#">more <i class="flaticon-right"></i></a></li>
-                    <li class="expand"><a href="{% static 'hotel/assets/img/room/room_det_img02.jpg' %}" class="popup-image">Expand <i class="flaticon-full-size"></i></a></li>
+                    <li class="expand"><a href="{% static 'hotel/assets/img/room/room_det_royal02.jpg' %}" class="popup-image">Expand <i class="flaticon-full-size"></i></a></li>
                 </ul>
             </div>
             <div class="room-details-content">
@@ -391,13 +391,13 @@
                                         <li>
                                             <div class="form-grp">
                                                 <label for="id_check_in">Check-In:</label>
-                                                <input type="datetime-local" placeholder="Check in" name="check_in" required id="id_check_in">
+                                                <input type="date" placeholder="Check in" name="check_in" required id="id_check_in">
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-grp">
                                                 <label for="id_check_out">Check-Out:</label>
-                                                <input type="datetime-local" placeholder="Check out" name="check_out" required id="id_check_out">
+                                                <input type="date" placeholder="Check out" name="check_out" required id="id_check_out">
                                             </div>
                                         </li>
                                         <li>
